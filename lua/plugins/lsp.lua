@@ -21,6 +21,7 @@ return {
             },
           },
         },
+        clangd = {},
       },
       setup = {
         gopls = function()
@@ -45,23 +46,23 @@ return {
         end,
       },
     },
-    {
-      "nvim-neotest/neotest",
-      optional = true,
-      dependencies = {
-        "nvim-neotest/neotest-go",
-      },
-      opts = {
-        adapters = {
-          ["neotest-go"] = {
-            -- Here we can set options for neotest-go, e.g.
-            -- args = { "-tags=integration" }
-          },
+  },
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "nvim-neotest/neotest-go",
+    },
+    opts = {
+      adapters = {
+        ["neotest-go"] = {
+          -- Here we can set options for neotest-go, e.g.
+          -- args = { "-tags=integration" }
         },
       },
     },
-    {
-      "nvim-neotest/neotest-go",
-    },
+  },
+  {
+    "nvim-neotest/neotest-go",
   },
 }
