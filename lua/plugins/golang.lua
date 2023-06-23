@@ -21,7 +21,6 @@ return {
             },
           },
         },
-        clangd = {},
       },
       setup = {
         gopls = function()
