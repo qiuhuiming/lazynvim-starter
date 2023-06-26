@@ -1,8 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-local Util = require("lazyvim.util")
-
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -20,3 +18,5 @@ end
 map({ "i" }, "jj", "<esc>", { desc = "Go to normal mode", remap = false })
 map({ "n" }, "W", ":w<CR>", { desc = "Save", remap = false })
 map({ "n" }, "Q", ":q<CR>", { desc = "Quit", remap = false })
+
+map({ "n", "v", "i" }, "<leader>\\", function() require('telescope.builtin').grep_string{} end, { desc = "Grep String", remap = false })
