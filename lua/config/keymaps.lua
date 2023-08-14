@@ -18,6 +18,9 @@ end
 map({ "i" }, "jj", "<esc>", { desc = "Go to normal mode", remap = false })
 map({ "n" }, "W", "<cmd>w<CR>", { desc = "Save", remap = false })
 map({ "n" }, "Q", "<cmd>q<CR>", { desc = "Quit", remap = false })
+map({ "i" }, "<C-o>", "<esc>o", { desc = "Next Line", remap = false })
+map({ "i" }, "<C-S-o>", "<esc>O", { desc = "Last Line", remap = false })
 
 map({ "n", "v" }, "<leader>\\", function() require('telescope.builtin').grep_string{} end, { desc = "Grep String", remap = false })
 map({ "n", "v" }, "<leader>r", '<cmd>Telescope resume<CR>', { desc = "Telescope Resume", remap = false })
+
