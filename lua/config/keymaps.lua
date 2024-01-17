@@ -27,3 +27,7 @@ map({ "n", "v" }, "<leader>r", '<cmd>Telescope resume<CR>', { desc = "Telescope 
 function DisableLsp()
     vim.lsp.stop_client(vim.lsp.get_active_clients())
 end
+
+function DeleteLspLog()
+    vim.cmd('!rm -f ~/.local/state/nvim/lsp.log')
+end
