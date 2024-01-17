@@ -24,3 +24,6 @@ map({ "i" }, "<C-S-o>", "<esc>O", { desc = "Last Line", remap = false })
 map({ "n", "v" }, "<leader>\\", function() require('telescope.builtin').grep_string{} end, { desc = "Grep String", remap = false })
 map({ "n", "v" }, "<leader>r", '<cmd>Telescope resume<CR>', { desc = "Telescope Resume", remap = false })
 
+function DisableLsp()
+    vim.lsp.stop_client(vim.lsp.get_active_clients())
+end
