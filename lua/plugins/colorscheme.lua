@@ -7,7 +7,7 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      style = "moon"
+      style = "night"
     },
   },
 
@@ -15,7 +15,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "tokyonight",
     },
   },
 }
