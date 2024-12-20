@@ -1,3 +1,5 @@
+local fzf_lua = require("fzf-lua")
+
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
@@ -21,13 +23,14 @@ map({ "n" }, "Q", "<cmd>q<CR>", { desc = "Quit", remap = false })
 map({ "i" }, "<C-o>", "<esc>o", { desc = "Next Line", remap = false })
 map({ "i" }, "<C-S-o>", "<esc>O", { desc = "Last Line", remap = false })
 
-map({ "n", "v" }, "<leader>\\", function() require('telescope.builtin').grep_string{} end, { desc = "Grep String", remap = false })
-map({ "n", "v" }, "<leader>r", '<cmd>Telescope resume<CR>', { desc = "Telescope Resume", remap = false })
+map({ "n", "v" }, "<leader>r", function()
+  fzf_lua.resume()
+end, { desc = "fzf_lua Resume", remap = false })
 
 function DisableLsp()
-    vim.lsp.stop_client(vim.lsp.get_active_clients())
+  vim.lsp.stop_client(vim.lsp.get_active_clients())
 end
 
 function DeleteLspLog()
-    vim.cmd('!rm -f ~/.local/state/nvim/lsp.log')
+  vim.cmd("!rm -f ~/.local/state/nvim/lsp.log")
 end
